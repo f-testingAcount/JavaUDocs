@@ -1,0 +1,8 @@
+domain\Persona.class
+Ejecutable\TestMySqulJDBC.class
+Ejecutable\TestMajejoPersonas.class
+datos\UsuarioDAO.class
+domain\Usuario.class
+Ejecutable\ManejoUsuario.class
+datos\Conexion.class
+datos\PersonaDAO.class
