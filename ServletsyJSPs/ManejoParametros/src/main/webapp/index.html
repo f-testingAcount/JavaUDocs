@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario Servlet</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Formulario Servlet</h1>
+        <form name="form1" action="/ManejoParametros/Servlet" method="post"> <!-- accion llama al componenente de servlet de la aplicacion citando el nombre de la app y el nombre del servlet -->
+                                                                             <!-- method indica el tipo de peticion a ejecutar si no se coloca nada por defecto ejecuta la peticion get -->
+            Usuario: <input type="text" name="usuario" />
+            Password: <input type="password" name="password" />
+            <br>
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>
