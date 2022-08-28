@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expresions JSPs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Expresiones JSPs</h1>
+        <br>
+        <a href="expresiones.jsp">Link al JSP de Expresiones</a>
+        <br>
+        <h4>Formulario HTML</h4>
+        <form name="forma1" action="procesaFormulario.jsp"> <!-- No es conveniente llamar a jsps desde paginas html o jsps ya que, el objetivo es que primero lo procese un servlet y posteriormente el servlet mande la pagina que se despliega ante el cliente -->
+            Usuario: <input type="text" name="usuario"/>
+            <br>
+            Password: <input type="password" name="password"/>
+            <br>
+            <input type="submit" value="Enviar"/>
+        </form> <!-- No es conveniente procesar formularios desde jsp aunque es posible. Aqui lo hacemos como ejemplo -->
+    </body>
+</html>
