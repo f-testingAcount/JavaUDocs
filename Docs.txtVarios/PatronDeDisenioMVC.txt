@@ -1,0 +1,41 @@
+PATRON DE DISEÑO MVC (MODELO VISTA CONTROLADOR)
+
+Los Servlets estan envofocados encontrolar el flujo de la peticion HTTP. En este caso procesan las peticiones HTTP y utilizan los Java Beans para 
+almacenar la info y redirecionarla al JSP respectivo.
+
+Los JSP's estan enfocados en desplegar la informacion de la aplicacion Web. La info es provista por medio de los servlets y la info que se comparte con
+estos componentes (los servlets y jsps) suele manejarse con java beans.
+
+El patron de Diseño MVC nos permite integrar a los JSP's (vista), a los Servlets (Controlador) y a los JavaBeans (Modelo).
+Esto nos permite crear apps cada ves mas robustas y mas faciles de mantener.
+
+FRAMEWORKS QUE UTILIZAN EL PATRON MVC
+
+. JSP/Servlets: Se implementa manualmente con ayuda del opbjeto RequestDispatcher para controlar el flujo de la aplicacion.
+
+. Struts: Es un framework de Apache, el cual utiliza JSP's (Vista) con tags de Struts, ActionFrom (Modelo), Action (Controlador) y Java Beans (Modelo)
+
+. JavaServer Faces (JSF): Es una tecnologia que utiliza conceptos como JSPs (Vista) con tags de JSF, ManagedBean (Controlador) y JavaBeans (Modelo)
+
+. SpringMVC: Es una extension del framework de Spring, que utiliza JSP (Vista) con tags de Spring, Clases Java (Controladores) y JavaBeans (Modelo)
+
+ (Estos son algunos de los mas representativos).
+
+PASOS GENERALES DE UN SERVLET CONTROLADOR
+
+a) Procesamos y validamos lo parametros (si aplica)
+   request.getParameter("nombreParametro");
+
+b) Realizamos la logica de presentacion almacenando el resultado en javaBeans
+   En este caso generamos un objeto nuevo.
+   Rectangulo rec = new Rectangulo();
+
+c) Compartimos el objeto bean a utilizar en algun alcance (scope)
+   request.setAttribute("rectanguloBean", rec);    //En este caso utilizamos request pero puede ser session o application. De se application vamos a 
+   utilizar es servletContext del servlet.
+   En este caso usamos el bean llamado "rectanguloBean" y esta info se almacena como un mapa con el conepto llave-valor. En ("rectanguloBean", rec)
+   rectanguloBean es la llave y rec es el valor que le asignamos a la llave. Asi es como agregamos atributos en cierto alcance.
+
+d) Redireccionamos al JSP seleccionado. Seleccionamos el JSP que desplegara la info al cliente
+   RequestDispatcher dispacher = request.getRequestDispatcher("resultado.jsp");
+   dispatcher.forward(request, response);
